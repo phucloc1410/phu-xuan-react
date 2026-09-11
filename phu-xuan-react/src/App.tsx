@@ -1,27 +1,14 @@
-// App.tsx — trang chủ phu-xuan-react v0.1
-// Buổi 2 · INT.7.18 — Web FrontEnd nâng cao
+// App.tsx — Lab 4: API Server + Fetch
+// Buổi 3 · INT.7.18 — Web FrontEnd nâng cao
 
-import Header from './components/Header'
-import WelcomeBanner from './components/WelcomeBanner'
-import PostCard from './components/PostCard'
-import Footer from './components/Footer'
+import { APP_NAME } from './constants';
+import PostList from './features/posts/PostList';
 
-function App() {
+export default function App() {
   return (
-    // Fragment <> </> cho phép trả về nhiều thẻ ngang cấp
-    // mà không cần bọc trong <div> thừa
-    <>
-      <Header />
-      <main>
-        <WelcomeBanner />
-        {/* PostCard hiển thị một bài viết mẫu */}
-        {/* Buổi 5 sẽ dùng props để truyền dữ liệu thay vì hardcode */}
-        <PostCard />
-      </main>
-      <Footer />
-    </>
-  )
+    <div style={{ padding: '2rem', fontFamily: 'sans-serif', maxWidth: '800px', margin: '0 auto' }}>
+      <h1>{APP_NAME}</h1>
+      <PostList />
+    </div>
+  );
 }
-
-export default App
-
