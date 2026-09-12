@@ -1,92 +1,90 @@
 function App() {
-  const hoTen = "Lê Thị Hồng";
-  const maSinhVien = "22CNTT045";
-  const diemChuyenCan = 9;
-  const diemBaiTap = 8;
-  const diemKiemTra = 7.5;
-  const daNopBaiTapVeNha = false; // thử đổi thành true để xem sự khác biệt
+  // ── Dữ liệu ──────────────────────────────────────────
+  const soLuongDiaDiem = 3;              // Lỗi 1: thiếu dấu ; (đã sửa)
+  const trangThaiMoCua = true;           // Lỗi 1: thiếu dấu ; (đã sửa)
 
-  const diemQuaTrinh =
-    diemChuyenCan * 0.2 + diemBaiTap * 0.4 + diemKiemTra * 0.4;
+  const diaDiem = [
+    {
+      ten: "Hoàng thành Thăng Long",
+      moTa: "Di sản văn hóa thế giới UNESCO, trung tâm quyền lực suốt 13 thế kỷ của Việt Nam.",
+      hinhAnh: "https://placehold.co/400x240/6366f1/ffffff?text=Ho%C3%A0ng+Th%C3%A0nh",
+      loai: "Di sản thế giới",
+    },
+    {
+      ten: "Hồ Hoàn Kiếm",
+      moTa: "Trái tim của Hà Nội, nơi gắn liền với truyền thuyết vua Lê trả gươm thần.",
+      hinhAnh: "https://placehold.co/400x240/8b5cf6/ffffff?text=H%E1%BB%93+Ho%C3%A0n+Ki%E1%BA%BFm",
+      loai: "Danh thắng",
+    },
+    {
+      ten: "Văn Miếu — Quốc Tử Giám",
+      moTa: "Trường đại học đầu tiên của Việt Nam, biểu tượng cho truyền thống hiếu học.",
+      hinhAnh: "https://placehold.co/400x240/0ea5e9/ffffff?text=V%C4%83n+Mi%E1%BA%BFu",
+      loai: "Di tích lịch sử",
+    },
+  ];
 
   return (
-    <div className="student-card">
-      {/* ── Card Header ── */}
-      <div className="card-header">
-        <h2>{hoTen}</h2>
-        <p className="student-id">MSV: {maSinhVien}</p>
-      </div>
-
-      {/* ── Avatar ── */}
-      <div className="avatar-wrapper">
-        <img
-          src="https://placehold.co/72x72/6366f1/ffffff?text=SV"
-          className="avatar"
-          alt={hoTen}
-        />
-      </div>
-
-      {/* ── Card Body ── */}
-      <div className="card-body">
-        {/* Score Detail Grid */}
-        <div className="score-details">
-          <div className="score-item">
-            <div className="score-label">Chuyên cần</div>
-            <div className="score-number">{diemChuyenCan}</div>
+    // Lỗi 3: hai phần tử gốc → bọc Fragment <> (đã sửa)
+    <>
+      <div className="trang-chu">
+        {/* ── Header ── */}
+        <header className="page-header">
+          <div className="header-content">
+            <span className="header-icon">🏛️</span>
+            <div>
+              <h1>Danh sách địa điểm</h1>
+              <p className="header-subtitle">
+                Khám phá {soLuongDiaDiem} địa điểm nổi tiếng tại Hà Nội
+              </p>
+            </div>
           </div>
-          <div className="score-item">
-            <div className="score-label">Bài tập</div>
-            <div className="score-number">{diemBaiTap}</div>
+        </header>
+
+        {/* ── Status Bar ── */}
+        <div className="status-bar">
+          <div className="status-item">
+            <span className="status-dot active" />
+            <span>
+              Trạng thái:{" "}
+              {/* Lỗi 4: thiếu dấu : trong ternary (đã sửa) */}
+              {trangThaiMoCua ? "Đang mở cửa" : "Đã đóng cửa"}
+            </span>
           </div>
-          <div className="score-item">
-            <div className="score-label">Kiểm tra</div>
-            <div className="score-number">{diemKiemTra}</div>
+          <div className="status-item">
+            <span className="status-count">{soLuongDiaDiem}</span>
+            <span>địa điểm</span>
           </div>
         </div>
 
-        {/* Overall Score */}
-        <div className="info-row">
-          <span className="info-label">
-            <span className="icon">📊</span>
-            Điểm quá trình
-          </span>
-          <span className="info-value score">{diemQuaTrinh}</span>
+        {/* ── Cards Grid ── */}
+        <div className="cards-grid">
+          {diaDiem.map((dd, index) => (
+            <div className="place-card" key={index}>
+              {/* Lỗi 5: thẻ img không đóng → thêm /> (đã sửa) */}
+              {/* Lỗi 2: class → className (đã sửa) */}
+              <img
+                src={dd.hinhAnh}
+                className="place-img"
+                alt={dd.ten}
+              />
+              <div className="place-body">
+                <span className="place-tag">{dd.loai}</span>
+                <h3 className="place-name">{dd.ten}</h3>
+                <p className="place-desc">{dd.moTa}</p>
+              </div>
+            </div>
+          ))}
         </div>
 
-        {/* Mã sinh viên */}
-        <div className="info-row">
-          <span className="info-label">
-            <span className="icon">🎓</span>
-            Mã số SV
-          </span>
-          <span className="info-value">{maSinhVien}</span>
-        </div>
-
-        {/* Homework Status — ternary operator */}
-        <div
-          className={
-            "status-badge " +
-            (daNopBaiTapVeNha ? "submitted" : "not-submitted")
-          }
-        >
-          <span className="status-icon">
-            {daNopBaiTapVeNha ? "✅" : "⚠️"}
-          </span>
-          <span>
-            {daNopBaiTapVeNha
-              ? "Đã nộp bài tập về nhà Buổi 3."
-              : "Chưa nộp bài tập về nhà Buổi 3 — cần nộp trước Buổi 4!"}
-          </span>
-        </div>
+        {/* ── Footer ── */}
+        <footer className="page-footer">
+          <span>phu-xuan-react</span>
+          <span className="dot" />
+          <span>Lab 3 — Buổi 4: Săn lỗi JSX</span>
+        </footer>
       </div>
-
-      {/* ── Card Footer ── */}
-      <div className="card-footer">
-        <span>phu-xuan-react</span>
-        <span className="dot" />
-        <span>Buổi 4: Giới thiệu JSX</span>
-      </div>
-    </div>
+    </>
   );
 }
 
