@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import StarRating from './StarRating';
+import TicketCounter from './TicketCounter';
 
-function AttractionCard({ name, category, description, rating }) {
+function AttractionCard({ name, category, description, rating, price }) {
   const [isFavorite, setIsFavorite] = useState(false);
 
   function handleToggleFavorite() {
@@ -20,6 +21,7 @@ function AttractionCard({ name, category, description, rating }) {
       <h3>{name}</h3>
       <p>{description}</p>
       <StarRating />
+      {price && <TicketCounter price={price} />}
       <span className="attraction-card__rating">⭐ {rating}</span>
     </div>
   );
