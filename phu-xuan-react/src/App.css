@@ -110,6 +110,97 @@
   gap: 8px;
 }
 
+/* ── LAB 2: MÓN ĂN HUẾ (useEffect dependency) ───── */
+.trang-mon-an {
+  max-width: 540px;
+  margin: 30px auto 40px;
+  background: white;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-light);
+}
+
+.trang-mon-an h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--text-main);
+  text-align: center;
+  margin: 0 0 16px;
+}
+
+.food-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.food-buttons button {
+  border: 1.5px solid var(--border-light);
+  background: #fff7ed;
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+
+.food-buttons button:hover {
+  background: #ffedd5;
+  color: var(--primary);
+  border-color: var(--primary-light);
+}
+
+.food-buttons button.is-active {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(194, 65, 12, 0.3);
+  transform: scale(1.05);
+}
+
+.the-mon-an {
+  background: #fdfbf7;
+  border-radius: var(--radius-md);
+  padding: 20px;
+  border: 1px solid #fed7aa;
+  border-left: 4px solid var(--primary);
+  animation: fadeIn 0.3s ease;
+}
+
+.the-mon-an h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--text-main);
+  margin: 0 0 8px;
+}
+
+.the-mon-an p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.food-loading {
+  text-align: center;
+  color: var(--primary);
+  font-weight: 600;
+  padding: 24px;
+  font-style: italic;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
+}
+
 /* ── CATEGORY TABS ────────────────────────────────── */
 .category-tabs {
   display: flex;

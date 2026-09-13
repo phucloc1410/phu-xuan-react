@@ -2,6 +2,7 @@ import { useState } from 'react';
 import AttractionList from './components/AttractionList';
 import CategoryTabs from './components/CategoryTabs';
 import { attractions } from './data/attractions';
+import TrangMonAn from './features/food/TrangMonAn';
 import LuotXemDaiNoi from './features/landmarks/LuotXemDaiNoi';
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
       </button>
 
       {hienThi && <LuotXemDaiNoi />}
+
+      {/* Lab 2: Xem chi tiết món ăn Huế */}
+      <TrangMonAn />
 
       <CategoryTabs
         categories={categories}
