@@ -52,6 +52,64 @@
   margin: 16px auto 40px;
 }
 
+/* ── LAB 1: LUỢT XEM ĐẠI NỘI (useEffect) ─────────── */
+.toggle-btn {
+  display: block;
+  margin: 0 auto 20px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(194, 65, 12, 0.25);
+  transition: all var(--transition);
+}
+
+.toggle-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(194, 65, 12, 0.35);
+}
+
+.the-luot-xem {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  max-width: 360px;
+  margin: 0 auto 36px;
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-light);
+  border-top: 4px solid var(--primary);
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.the-luot-xem h3 {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--text-main);
+  margin: 0 0 10px;
+}
+
+.the-luot-xem p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
 /* ── CATEGORY TABS ────────────────────────────────── */
 .category-tabs {
   display: flex;
