@@ -483,6 +483,97 @@
   font-size: 1rem;
 }
 
+/* ── LAB 4: DANH SÁCH ĐỊA DANH (useMemo & useCallback) ─ */
+.danh-sach-dia-danh {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  background: white;
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-light);
+}
+
+.danh-sach-dia-danh__title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--text-main);
+  text-align: center;
+  margin: 0 0 16px;
+}
+
+.danh-sach-dia-danh__filter {
+  width: 100%;
+  padding: 12px 16px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-md);
+  margin-bottom: 8px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.danh-sach-dia-danh__filter:focus {
+  border-color: var(--primary-light);
+}
+
+.danh-sach-dia-danh__count {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.danh-sach-dia-danh__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.the-dia-danh {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background: #f8fafc;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+.the-dia-danh__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.the-dia-danh__ten {
+  font-weight: 700;
+  color: var(--text-main);
+  font-size: 1.1rem;
+}
+
+.the-dia-danh__khu {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.the-dia-danh__btn {
+  background: white;
+  border: 1px solid #fca5a5;
+  color: #ef4444;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.the-dia-danh__btn:hover {
+  background: #fff1f2;
+}
+
 /* ── RESPONSIVE ───────────────────────────────────── */
 @media (max-width: 768px) {
   .app > h1 {

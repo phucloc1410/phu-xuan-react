@@ -4,6 +4,8 @@ import CategoryTabs from './components/CategoryTabs';
 import { attractions } from './data/attractions';
 import TrangMonAn from './features/food/TrangMonAn';
 import LuotXemDaiNoi from './features/landmarks/LuotXemDaiNoi';
+import DanhSachDiaDanh from './features/landmarks/DanhSachDiaDanh';
+
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState('Tất cả');
@@ -33,8 +35,11 @@ function App() {
 
       {hienThi && <LuotXemDaiNoi />}
 
-      {/* Lab 2: Xem chi tiết món ăn Huế */}
+      {/* Lab 2 & 3: Món ăn Huế */}
       <TrangMonAn />
+
+      {/* Lab 4: Danh sách địa danh tối ưu với useMemo & useCallback */}
+      <DanhSachDiaDanh />
 
       <CategoryTabs
         categories={categories}
