@@ -1,13 +1,24 @@
 import { useRef, useEffect, useState } from 'react';
+import useDebounce from '../../hooks/useDebounce';
 
 function TimMonAn() {
   const oTimKiemRef = useRef(null);
   const soLanRenderRef = useRef(0);
   const [tuKhoa, setTuKhoa] = useState('');
+  
+  // Lab 5: Áp dụng useDebounce
+  const tuKhoaDaTre = useDebounce(tuKhoa, 300);
 
   // Đếm số lần render (chạy mỗi lần hàm component được gọi lại)
   soLanRenderRef.current = soLanRenderRef.current + 1;
   console.log('TimMonAn đã render:', soLanRenderRef.current, 'lần');
+
+  // Mô phỏng việc lọc danh sách với từ khoá đã debounce
+  useEffect(() => {
+    if (tuKhoaDaTre) {
+      console.log('Đang lọc theo từ khoá:', tuKhoaDaTre);
+    }
+  }, [tuKhoaDaTre]);
 
   // Auto-focus khi mount
   useEffect(() => {
