@@ -201,6 +201,56 @@
   to { opacity: 1; }
 }
 
+/* ── LAB 3: TÌM KIẾM (useRef auto-focus + render count) ─ */
+.tim-mon-an {
+  max-width: 480px;
+  margin: 0 auto 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.tim-mon-an__label {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.tim-mon-an__input {
+  width: 100%;
+  padding: 12px 18px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-pill);
+  outline: none;
+  background: white;
+  color: var(--text-main);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  box-sizing: border-box;
+}
+
+.tim-mon-an__input:focus {
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(251, 146, 60, 0.2);
+}
+
+.tim-mon-an__count {
+  font-size: 0.82rem;
+  color: var(--text-light);
+  margin: 0;
+  text-align: right;
+  font-style: italic;
+}
+
+.tim-mon-an__count strong {
+  color: var(--primary);
+  font-style: normal;
+}
+
 /* ── CATEGORY TABS ────────────────────────────────── */
 .category-tabs {
   display: flex;

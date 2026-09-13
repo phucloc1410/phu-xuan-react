@@ -1,11 +1,15 @@
 import { useState } from 'react';
 import ChiTietMonAn from './ChiTietMonAn';
+import TimMonAn from './TimMonAn';
 
 function TrangMonAn() {
   const [idDangChon, setIdDangChon] = useState(1);
 
   return (
     <div className="trang-mon-an">
+      {/* Lab 3: Ô tìm kiếm tự động focus + đếm số lần render */}
+      <TimMonAn />
+
       <div className="food-buttons">
         <button
           type="button"
