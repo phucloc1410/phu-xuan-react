@@ -194,6 +194,39 @@
   background: linear-gradient(135deg, #dc2626, #ef4444);
 }
 
+/* ── STAR RATING ──────────────────────────────────── */
+.star-rating {
+  padding: 8px 0;
+}
+
+.star-rating__stars {
+  display: flex;
+  gap: 4px;
+}
+
+.star {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-light);
+  transition: transform 0.2s ease, color 0.2s ease;
+  user-select: none;
+}
+
+.star:hover {
+  transform: scale(1.25);
+}
+
+.star.is-filled {
+  color: #f59e0b;
+}
+
+.star-rating__text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin: 6px 0 0;
+  font-weight: 500;
+}
+
 /* ── RESPONSIVE ───────────────────────────────────── */
 @media (max-width: 768px) {
   .app > h1 {
