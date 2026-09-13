@@ -52,6 +52,43 @@
   margin: 16px auto 40px;
 }
 
+/* ── CATEGORY TABS ────────────────────────────────── */
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 36px;
+}
+
+.category-tabs button {
+  border: 1.5px solid var(--border-light);
+  background: var(--bg-card);
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all var(--transition);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.category-tabs button:hover {
+  border-color: var(--primary-light);
+  color: var(--primary);
+  background: #fff7ed;
+}
+
+.category-tabs button.is-active {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 14px rgba(194, 65, 12, 0.3);
+  transform: scale(1.05);
+}
+
 /* ── ATTRACTION LIST (grid) ───────────────────────── */
 .attraction-list {
   display: grid;
