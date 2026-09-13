@@ -344,3 +344,90 @@ button:disabled {
   background: #e2e8f0;
   color: #334155;
 }
+
+/* Lab 4 - Tìm món ăn */
+.form-tim {
+  position: relative;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-tim input[type="search"] {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.form-tim input[type="search"]:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+  background: white;
+}
+
+.goi-y {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  right: 0;
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  padding: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  z-index: 10;
+  animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.goi-y button {
+  background: #f1f5f9;
+  color: var(--text-main);
+  font-weight: normal;
+  padding: 0.5rem 1rem;
+  box-shadow: none;
+}
+
+.goi-y button:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.ds-mon {
+  list-style: none;
+  padding: 0;
+}
+
+.ds-mon li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  margin-bottom: 0.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s;
+}
+
+.ds-mon li:hover {
+  transform: translateX(4px);
+  border-left: 4px solid var(--primary-color);
+}
+
+.ds-mon li small {
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1rem;
+}
