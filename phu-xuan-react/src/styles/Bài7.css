@@ -431,3 +431,75 @@ button:disabled {
   font-weight: bold;
   font-size: 1rem;
 }
+
+/* Lab 5 - Kéo thả */
+.huong-dan {
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+.ds-keo-tha {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.ds-keo-tha li {
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: grab;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border: 1px solid var(--card-border);
+}
+
+.ds-keo-tha li:active {
+  cursor: grabbing;
+}
+
+.ds-keo-tha li:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+.ds-keo-tha li:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.ds-keo-tha li.dang-keo {
+  opacity: 0.5;
+  background: #f1f5f9;
+  border: 2px dashed var(--primary-color);
+}
+
+.thu-tu {
+  font-weight: bold;
+  color: var(--primary-color);
+  background: #f0f9ff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+}
+
+.tay-cam {
+  margin-left: auto;
+  color: #94a3b8;
+  font-size: 1.5rem;
+}
