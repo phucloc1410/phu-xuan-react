@@ -1,23 +1,30 @@
-import DiaDiem1 from "./components/DiaDiem1.jsx";
-import DiaDiem2 from "./components/DiaDiem2.jsx";
-import DiaDiem3 from "./components/DiaDiem3.jsx";
-import { NhanTrangThai, demTongSoDiaDiem } from "./components/TienIch.jsx";
+import { useState } from 'react';
+import AttractionList from './components/AttractionList';
+import CategoryTabs from './components/CategoryTabs';
+import { attractions } from './data/attractions';
 
 function App() {
-  const danhSachTen = ["Đại Nội Huế", "Chợ Đông Ba", "Cầu Tràng Tiền"];
-  const gioHienTaiLa8Gio = true; // giả lập giờ hiện tại để kiểm tra NhanTrangThai
+  const [selectedCategory, setSelectedCategory] = useState('Tất cả');
+
+  const categories = [
+    'Tất cả',
+    ...new Set(attractions.map((item) => item.category)),
+  ];
+
+  const filteredAttractions =
+    selectedCategory === 'Tất cả'
+      ? attractions
+      : attractions.filter((item) => item.category === selectedCategory);
 
   return (
-    <div className="trang-chu">
-      <h1>Danh sách địa điểm — phu-xuan-react</h1>
-      <p>
-        Tổng số địa điểm: {demTongSoDiaDiem(danhSachTen)}
-        {" "}— <NhanTrangThai dangMoCua={gioHienTaiLa8Gio} />
-      </p>
-
-      <DiaDiem1 />
-      <DiaDiem2 />
-      <DiaDiem3 />
+    <div className="app">
+      <h1>Khám phá Huế</h1>
+      <CategoryTabs
+        categories={categories}
+        selectedCategory={selectedCategory}
+        onSelectCategory={setSelectedCategory}
+      />
+      <AttractionList attractions={filteredAttractions} />
     </div>
   );
 }
